@@ -3,8 +3,12 @@ const connect = function () {
   const conn = net.createConnection({
     host: "localhost",
     port: 50541,
-
   });
+  conn.on("connect", () => {
+    console.log("Connection established")
+    conn.write("Name: Ayo")
+  })
+
   conn.on("data", (data) => {
     console.log(data)
   });
