@@ -7,10 +7,10 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("Connection established");
     conn.write("Name: Ayo");
-    conn.write("Move: up");
-    setInterval(() => {
-      conn.write("Move: up");
-    }, 50);
+    // conn.write("Move: up");
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 50);
   });
 
   conn.on("data", (data) => {
