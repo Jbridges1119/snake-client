@@ -5,9 +5,13 @@ const connect = function () {
     port: 50541,
   });
   conn.on("connect", () => {
-    console.log("Connection established")
-    conn.write("Name: Ayo")
-  })
+    console.log("Connection established");
+    conn.write("Name: Ayo");
+    conn.write("Move: up");
+    setInterval(() => {
+      conn.write("Move: up");
+    }, 50);
+  });
 
   conn.on("data", (data) => {
     console.log(data)
