@@ -1,3 +1,4 @@
+const {MOVE_KEY, VOICE1} = require('./constants')
 let connection;
 
 const setupInput = (conn) => {
@@ -11,12 +12,12 @@ const setupInput = (conn) => {
 };
 
 const handleUserInput = function (key) {
-  if (key === 'w') connection.write('Move: up');
-  if (key === 'a') connection.write('Move: left');
-  if (key === 's') connection.write('Move: down');
-  if (key === 'd') connection.write('Move: right');
-  if (key === 'q') connection.write("Say: Oof this is hard to understand")
-  if (key === 'e') connection.write("Say: Time for distractions")
+  if (key === 'w') connection.write(MOVE_KEY.w);
+  if (key === 'a') connection.write(MOVE_KEY.a);
+  if (key === 's') connection.write(MOVE_KEY.s);
+  if (key === 'd') connection.write(MOVE_KEY.d);
+  if (key === 'q') connection.write(VOICE1.q)
+  if (key === 'e') connection.write(VOICE1.e)
   if (key === '\u0003') {
     console.log('Exit');
     process.exit();
